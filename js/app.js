@@ -225,6 +225,7 @@
 
     menuTabs.forEach((tab) => {
         tab.addEventListener('click', () => {
+            closeShowcase();
             const category = tab.dataset.category;
 
             menuTabs.forEach((t) => t.classList.remove('active'));
@@ -268,94 +269,149 @@
         });
     });
 
-    // ========== Dish Modal ==========
-    const dishModal = document.getElementById('dishModal');
-    const dishModalOverlay = document.getElementById('dishModalOverlay');
-    const dishModalClose = document.getElementById('dishModalClose');
-    const dishModalImage = document.getElementById('dishModalImage');
-    const dishModalName = document.getElementById('dishModalName');
-    const dishModalDesc = document.getElementById('dishModalDesc');
-    const dishModalPrice = document.getElementById('dishModalPrice');
+    // ========== Dish Showcase (Inline) ==========
+    const dishShowcase = document.getElementById('dishShowcase');
+    const dishShowcaseClose = document.getElementById('dishShowcaseClose');
+    const dishShowcaseImage = document.getElementById('dishShowcaseImage');
+    const dishShowcaseName = document.getElementById('dishShowcaseName');
+    const dishShowcaseDesc = document.getElementById('dishShowcaseDesc');
+    const dishShowcasePrice = document.getElementById('dishShowcasePrice');
+    let showcaseOpen = false;
+    let currentShowcaseItem = null;
+    let showcaseTimeline = null;
 
-    document.querySelectorAll('.menu-item').forEach((item) => {
-        item.addEventListener('click', () => {
-            const img = item.dataset.img;
-            const name = item.querySelector('.menu-item-name').textContent;
-            const desc = item.dataset.desc;
-            const price = item.querySelector('.menu-item-price').textContent;
+    function setShowcaseContent(item) {
+        dishShowcaseImage.src = item.dataset.img;
+        dishShowcaseImage.alt = item.querySelector('.menu-item-name').textContent;
+        dishShowcaseName.textContent = item.querySelector('.menu-item-name').textContent;
+        dishShowcaseDesc.textContent = item.dataset.desc;
+        dishShowcasePrice.textContent = item.querySelector('.menu-item-price').textContent;
+    }
 
-            dishModalImage.src = img;
-            dishModalImage.alt = name;
-            dishModalName.textContent = name;
-            dishModalDesc.textContent = desc;
-            dishModalPrice.textContent = price;
+    function openShowcase(item) {
+        document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
+        currentShowcaseItem = item;
 
-            // Reset elements before animating
-            gsap.set('.dish-modal-image-wrapper', { x: '-120%', rotation: -180, opacity: 0 });
-            gsap.set('.dish-modal-info', { y: 30, opacity: 0 });
-            gsap.set(dishModalClose, { opacity: 0 });
-            gsap.set(dishModalOverlay, { opacity: 0 });
+        if (showcaseOpen) {
+            // Swap: slide current plate out left, new plate in from right
+            if (showcaseTimeline) showcaseTimeline.kill();
+            showcaseTimeline = gsap.timeline();
+            showcaseTimeline
+                .to('#dishShowcasePlate', {
+                    x: '-60%', opacity: 0, rotation: -30,
+                    duration: 0.4, ease: 'power2.in',
+                })
+                .to('#dishShowcaseDetails', {
+                    y: 15, opacity: 0,
+                    duration: 0.3, ease: 'power2.in',
+                }, '-=0.35')
+                .call(() => setShowcaseContent(item))
+                .fromTo('#dishShowcasePlate',
+                    { x: '100%', opacity: 0, rotation: 60 },
+                    { x: '0%', opacity: 1, rotation: 0, duration: 1, ease: 'power3.out' }
+                )
+                .to('.dish-showcase-divider', { scaleX: 1, duration: 0.4, ease: 'power2.out' }, '-=0.7')
+                .fromTo('#dishShowcaseDetails',
+                    { y: -40, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
+                    '-=0.6'
+                );
+            return;
+        }
 
-            dishModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // First open
+        setShowcaseContent(item);
+        showcaseOpen = true;
 
-            const tl = gsap.timeline();
-            tl
-                // Fade in dark overlay
-                .to(dishModalOverlay, { opacity: 1, duration: 0.4, ease: 'power2.out' })
-                // Plate rolls in from the left — slides across while spinning
-                .to('.dish-modal-image-wrapper', {
-                    x: '0%',
-                    rotation: 0,
-                    opacity: 1,
-                    duration: 1.2,
-                    ease: 'power3.out',
-                }, '-=0.1')
-                // Dish info slides up below the plate
-                .to('.dish-modal-info', {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    ease: 'power3.out',
-                }, '-=0.4')
-                // Close button fades in
-                .to(dishModalClose, {
-                    opacity: 1,
-                    duration: 0.3,
-                }, '-=0.3');
-        });
-    });
+        gsap.set('#dishShowcasePlate', { x: '100vw', rotation: 90, opacity: 0 });
+        gsap.set('#dishShowcaseDetails', { y: -50, opacity: 0 });
+        gsap.set('#dishShowcaseClose', { opacity: 0 });
+        gsap.set('.dish-showcase-divider', { scaleX: 0 });
 
-    function closeDishModal() {
-        const tl = gsap.timeline({
+        dishShowcase.style.display = 'block';
+        dishShowcase.style.overflow = 'hidden';
+
+        gsap.fromTo(dishShowcase,
+            { height: 0, opacity: 0 },
+            {
+                height: 'auto', opacity: 1,
+                duration: 0.7, ease: 'power3.out',
+                onComplete: () => {
+                    dishShowcase.style.overflow = 'visible';
+                    dishShowcase.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                },
+            }
+        );
+
+        if (showcaseTimeline) showcaseTimeline.kill();
+        showcaseTimeline = gsap.timeline({ delay: 0.3 });
+        showcaseTimeline
+            // Plate slides in from the right
+            .to('#dishShowcasePlate', {
+                x: '0%', rotation: 0, opacity: 1,
+                duration: 1.2, ease: 'power3.out',
+            })
+            // Dish name slides down from above to center
+            .to('#dishShowcaseDetails', {
+                y: 0, opacity: 1,
+                duration: 0.7, ease: 'power3.out',
+            }, '-=0.6')
+            // Gold divider draws itself
+            .to('.dish-showcase-divider', {
+                scaleX: 1, duration: 0.5, ease: 'power2.out',
+            }, '-=0.4')
+            // Close button fades in
+            .to('#dishShowcaseClose', {
+                opacity: 1, duration: 0.3,
+            }, '-=0.3');
+    }
+
+    function closeShowcase() {
+        if (!showcaseOpen) return;
+        showcaseOpen = false;
+        document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
+        currentShowcaseItem = null;
+
+        if (showcaseTimeline) showcaseTimeline.kill();
+        dishShowcase.style.overflow = 'hidden';
+
+        showcaseTimeline = gsap.timeline({
             onComplete: () => {
-                dishModal.classList.remove('active');
-                document.body.style.overflow = '';
+                dishShowcase.style.display = 'none';
+                gsap.set(dishShowcase, { height: 0, opacity: 0 });
             },
         });
 
-        tl
-            // Info slides down
-            .to('.dish-modal-info', { y: 30, opacity: 0, duration: 0.3, ease: 'power3.in' })
-            // Plate rolls out to the right
-            .to('.dish-modal-image-wrapper', {
-                x: '120%',
-                rotation: 180,
-                opacity: 0,
-                duration: 0.8,
-                ease: 'power3.in',
-            }, '-=0.15')
-            .to(dishModalClose, { opacity: 0, duration: 0.2 }, '-=0.6')
-            // Overlay fades out
-            .to(dishModalOverlay, { opacity: 0, duration: 0.3, ease: 'power2.in' }, '-=0.3');
+        showcaseTimeline
+            .to('#dishShowcaseClose', { opacity: 0, duration: 0.2 })
+            .to('#dishShowcaseDetails', { y: 15, opacity: 0, duration: 0.3, ease: 'power2.in' }, '-=0.1')
+            // Plate slides out to the right
+            .to('#dishShowcasePlate', {
+                x: '100%', rotation: 45, opacity: 0,
+                duration: 0.7, ease: 'power3.in',
+            }, '-=0.2')
+            .to(dishShowcase, {
+                height: 0, opacity: 0,
+                duration: 0.4, ease: 'power3.inOut',
+            }, '-=0.2');
     }
 
-    dishModalClose.addEventListener('click', closeDishModal);
-    dishModalOverlay.addEventListener('click', closeDishModal);
+    document.querySelectorAll('.menu-item').forEach((item) => {
+        item.addEventListener('click', () => {
+            if (currentShowcaseItem === item && showcaseOpen) {
+                closeShowcase();
+                return;
+            }
+            openShowcase(item);
+        });
+    });
+
+    dishShowcaseClose.addEventListener('click', closeShowcase);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && dishModal.classList.contains('active')) {
-            closeDishModal();
+        if (e.key === 'Escape' && showcaseOpen) {
+            closeShowcase();
         }
     });
 

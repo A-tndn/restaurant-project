@@ -162,7 +162,7 @@
 
                 <!-- Starters -->
                 <div class="menu-category active" data-category="starters">
-                    <div class="menu-item" data-dish="truffle-burrata" data-img="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=600&q=80" data-desc="Creamy burrata with black truffle shavings, heirloom tomatoes, aged balsamic, and micro basil on toasted sourdough.">
+                    <div class="menu-item" data-dish="truffle-burrata" data-img="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" data-desc="Creamy burrata with black truffle shavings, heirloom tomatoes, aged balsamic, and micro basil on toasted sourdough.">
                         <div class="menu-item-info">
                             <h3 class="menu-item-name">Truffle Burrata</h3>
                             <p class="menu-item-desc">Black truffle, heirloom tomatoes, aged balsamic</p>
@@ -198,7 +198,7 @@
 
                 <!-- Mains -->
                 <div class="menu-category" data-category="mains">
-                    <div class="menu-item" data-dish="wagyu-ribeye" data-img="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" data-desc="A5 Wagyu ribeye seared over oak embers, served with bone marrow butter, roasted garlic, and seasonal vegetables.">
+                    <div class="menu-item" data-dish="wagyu-ribeye" data-img="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80" data-desc="A5 Wagyu ribeye seared over oak embers, served with bone marrow butter, roasted garlic, and seasonal vegetables.">
                         <div class="menu-item-info">
                             <h3 class="menu-item-name">Wagyu Ribeye</h3>
                             <p class="menu-item-desc">Oak-fired, bone marrow butter, seasonal vegetables</p>
@@ -234,7 +234,7 @@
 
                 <!-- Desserts -->
                 <div class="menu-category" data-category="desserts">
-                    <div class="menu-item" data-dish="chocolate-fondant" data-img="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80" data-desc="Warm Valrhona chocolate fondant with a molten center, vanilla bean ice cream, and gold leaf.">
+                    <div class="menu-item" data-dish="chocolate-fondant" data-img="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" data-desc="Warm Valrhona chocolate fondant with a molten center, vanilla bean ice cream, and gold leaf.">
                         <div class="menu-item-info">
                             <h3 class="menu-item-name">Chocolate Fondant</h3>
                             <p class="menu-item-desc">Molten center, vanilla ice cream, gold leaf</p>
@@ -289,24 +289,26 @@
                 </div>
 
             </div>
+
+            <!-- Dish Showcase (Inline) -->
+            <div class="dish-showcase" id="dishShowcase">
+                <button class="dish-showcase-close" id="dishShowcaseClose">&times;</button>
+                <div class="dish-showcase-inner">
+                    <div class="dish-showcase-plate" id="dishShowcasePlate">
+                        <img src="" alt="" id="dishShowcaseImage">
+                        <div class="plate-shadow"></div>
+                    </div>
+                    <div class="dish-showcase-details" id="dishShowcaseDetails">
+                        <h3 class="dish-showcase-name" id="dishShowcaseName"></h3>
+                        <div class="dish-showcase-divider"></div>
+                        <p class="dish-showcase-desc" id="dishShowcaseDesc"></p>
+                        <span class="dish-showcase-price" id="dishShowcasePrice"></span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
-
-    <!-- Dish Modal -->
-    <div class="dish-modal" id="dishModal">
-        <div class="dish-modal-overlay" id="dishModalOverlay"></div>
-        <div class="dish-modal-content">
-            <button class="dish-modal-close" id="dishModalClose">&times;</button>
-            <div class="dish-modal-image-wrapper">
-                <img src="" alt="" class="dish-modal-image" id="dishModalImage">
-            </div>
-            <div class="dish-modal-info">
-                <h3 class="dish-modal-name" id="dishModalName"></h3>
-                <p class="dish-modal-desc" id="dishModalDesc"></p>
-                <span class="dish-modal-price" id="dishModalPrice"></span>
-            </div>
-        </div>
-    </div>
 
     <!-- ==================== GALLERY ==================== -->
     <section class="gallery" id="gallery">
