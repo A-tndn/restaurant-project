@@ -277,8 +277,6 @@
     const dishModalDesc = document.getElementById('dishModalDesc');
     const dishModalPrice = document.getElementById('dishModalPrice');
 
-    let modalTL = null;
-
     document.querySelectorAll('.menu-item').forEach((item) => {
         item.addEventListener('click', () => {
             const img = item.dataset.img;
@@ -292,51 +290,64 @@
             dishModalDesc.textContent = desc;
             dishModalPrice.textContent = price;
 
+            // Reset elements before animating
+            gsap.set('.dish-modal-image-wrapper', { x: '-120%', rotation: -180, opacity: 0 });
+            gsap.set('.dish-modal-info', { y: 30, opacity: 0 });
+            gsap.set(dishModalClose, { opacity: 0 });
+            gsap.set(dishModalOverlay, { opacity: 0 });
+
             dishModal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
-            modalTL = gsap.timeline();
-            modalTL
+            const tl = gsap.timeline();
+            tl
+                // Fade in dark overlay
                 .to(dishModalOverlay, { opacity: 1, duration: 0.4, ease: 'power2.out' })
-                .to(
-                    '.dish-modal-content',
-                    {
-                        scale: 1,
-                        rotation: 0,
-                        opacity: 1,
-                        duration: 0.7,
-                        ease: 'back.out(1.4)',
-                    },
-                    '-=0.2'
-                )
-                .from(
-                    '.dish-modal-info',
-                    { y: 20, opacity: 0, duration: 0.4, ease: 'power3.out' },
-                    '-=0.3'
-                );
+                // Plate rolls in from the left — slides across while spinning
+                .to('.dish-modal-image-wrapper', {
+                    x: '0%',
+                    rotation: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: 'power3.out',
+                }, '-=0.1')
+                // Dish info slides up below the plate
+                .to('.dish-modal-info', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.6,
+                    ease: 'power3.out',
+                }, '-=0.4')
+                // Close button fades in
+                .to(dishModalClose, {
+                    opacity: 1,
+                    duration: 0.3,
+                }, '-=0.3');
         });
     });
 
     function closeDishModal() {
-        const closeTL = gsap.timeline({
+        const tl = gsap.timeline({
             onComplete: () => {
                 dishModal.classList.remove('active');
                 document.body.style.overflow = '';
-                // Reset for next open
-                gsap.set('.dish-modal-content', { scale: 0, rotation: -15, opacity: 0 });
-                gsap.set(dishModalOverlay, { opacity: 0 });
             },
         });
 
-        closeTL
-            .to('.dish-modal-content', {
-                scale: 0.8,
-                rotation: 10,
+        tl
+            // Info slides down
+            .to('.dish-modal-info', { y: 30, opacity: 0, duration: 0.3, ease: 'power3.in' })
+            // Plate rolls out to the right
+            .to('.dish-modal-image-wrapper', {
+                x: '120%',
+                rotation: 180,
                 opacity: 0,
-                duration: 0.4,
+                duration: 0.8,
                 ease: 'power3.in',
-            })
-            .to(dishModalOverlay, { opacity: 0, duration: 0.3, ease: 'power2.in' }, '-=0.2');
+            }, '-=0.15')
+            .to(dishModalClose, { opacity: 0, duration: 0.2 }, '-=0.6')
+            // Overlay fades out
+            .to(dishModalOverlay, { opacity: 0, duration: 0.3, ease: 'power2.in' }, '-=0.3');
     }
 
     dishModalClose.addEventListener('click', closeDishModal);
