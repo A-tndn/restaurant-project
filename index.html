@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember & Oak — Fine Dining Experience</title>
+    <meta name="description" content="Ember & Oak — An immersive fine dining experience where culinary artistry meets modern elegance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <span class="preloader-char">E</span>
+                <span class="preloader-char">m</span>
+                <span class="preloader-char">b</span>
+                <span class="preloader-char">e</span>
+                <span class="preloader-char">r</span>
+                <span class="preloader-char">&nbsp;</span>
+                <span class="preloader-char">&</span>
+                <span class="preloader-char">&nbsp;</span>
+                <span class="preloader-char">O</span>
+                <span class="preloader-char">a</span>
+                <span class="preloader-char">k</span>
+            </div>
+            <div class="preloader-line"></div>
+            <p class="preloader-tagline">Fine Dining Experience</p>
+        </div>
+    </div>
+
+    <!-- ==================== CUSTOM CURSOR ==================== -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Ember <span>&</span> Oak</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#chef">The Chef</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#reservation" class="nav-reserve-btn">Reserve a Table</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chef">The Chef</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#reservation">Reserve a Table</a></li>
+        </ul>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80" alt="Fine dining ambiance" class="hero-bg-img">
+        </div>
+        <div class="hero-overlay"></div>
+
+        <!-- Floating embers -->
+        <div class="embers">
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-badge">Est. 2018 &mdash; Fine Dining</p>
+            <h1 class="hero-title" id="heroTitle">
+                <span class="hero-line">Where Fire</span>
+                <span class="hero-line">Meets <em>Flavor</em></span>
+            </h1>
+            <p class="hero-subtitle">An unforgettable culinary journey through wood-fired cuisine, crafted with passion and served with elegance.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-gold magnetic-btn">Explore Menu</a>
+                <a href="#reservation" class="btn btn-outline-gold magnetic-btn">Reserve a Table</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="about-image reveal-image">
+                        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=800&q=80" alt="Restaurant interior">
+                    </div>
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title split-text">A Legacy of Flavor & Craft</h2>
+                    <div class="gold-line"></div>
+                    <p class="about-text fade-up">Born from a love of open-flame cooking and seasonal ingredients, Ember & Oak has redefined fine dining since 2018. Every dish tells a story of tradition, innovation, and the pure joy of gathering around a table.</p>
+                    <p class="about-text fade-up">Our kitchen is guided by simplicity — the best ingredients, treated with respect, elevated by fire. From our hand-built oak-wood oven to our locally sourced produce, every detail matters.</p>
+                    <div class="about-stats">
+                        <div class="about-stat fade-up">
+                            <span class="stat-num" data-target="8">0</span>
+                            <span class="stat-text">Years of Excellence</span>
+                        </div>
+                        <div class="about-stat fade-up">
+                            <span class="stat-num" data-target="150">0</span>
+                            <span class="stat-text">Signature Dishes</span>
+                        </div>
+                        <div class="about-stat fade-up">
+                            <span class="stat-num" data-target="12">0</span>
+                            <span class="stat-text">Awards Won</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MENU ==================== -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Menu</span>
+                <h2 class="section-title split-text">Crafted with Passion</h2>
+                <p class="section-subtitle fade-up">Each dish is a celebration of bold flavors, premium ingredients, and the art of wood-fired cooking.</p>
+            </div>
+
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="starters">Starters</button>
+                <button class="menu-tab" data-category="mains">Mains</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+                <button class="menu-tab" data-category="drinks">Drinks</button>
+            </div>
+
+            <div class="menu-list" id="menuList">
+
+                <!-- Starters -->
+                <div class="menu-category active" data-category="starters">
+                    <div class="menu-item" data-dish="truffle-burrata" data-img="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=600&q=80" data-desc="Creamy burrata with black truffle shavings, heirloom tomatoes, aged balsamic, and micro basil on toasted sourdough.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Truffle Burrata</h3>
+                            <p class="menu-item-desc">Black truffle, heirloom tomatoes, aged balsamic</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$24</span>
+                    </div>
+                    <div class="menu-item" data-dish="oak-smoked-salmon" data-img="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80" data-desc="House-smoked Atlantic salmon with dill cream, capers, pickled shallots, and pumpernickel crisp.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Oak-Smoked Salmon</h3>
+                            <p class="menu-item-desc">Dill cream, capers, pickled shallots</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$22</span>
+                    </div>
+                    <div class="menu-item" data-dish="charred-octopus" data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" data-desc="Tender charred octopus with chorizo oil, roasted peppers, fingerling potatoes, and fresh parsley.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Charred Octopus</h3>
+                            <p class="menu-item-desc">Chorizo oil, roasted peppers, fingerling potatoes</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$28</span>
+                    </div>
+                    <div class="menu-item" data-dish="mushroom-soup" data-img="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" data-desc="Velvety wild mushroom soup with truffle oil, crispy sage, and a touch of sherry cream.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Wild Mushroom Veloute</h3>
+                            <p class="menu-item-desc">Truffle oil, crispy sage, sherry cream</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$18</span>
+                    </div>
+                </div>
+
+                <!-- Mains -->
+                <div class="menu-category" data-category="mains">
+                    <div class="menu-item" data-dish="wagyu-ribeye" data-img="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" data-desc="A5 Wagyu ribeye seared over oak embers, served with bone marrow butter, roasted garlic, and seasonal vegetables.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Wagyu Ribeye</h3>
+                            <p class="menu-item-desc">Oak-fired, bone marrow butter, seasonal vegetables</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$85</span>
+                    </div>
+                    <div class="menu-item" data-dish="sea-bass" data-img="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=600&q=80" data-desc="Pan-seared Chilean sea bass with saffron risotto, beurre blanc, and roasted fennel.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Chilean Sea Bass</h3>
+                            <p class="menu-item-desc">Saffron risotto, beurre blanc, roasted fennel</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$62</span>
+                    </div>
+                    <div class="menu-item" data-dish="lamb-rack" data-img="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" data-desc="Herb-crusted lamb rack with rosemary jus, pommes puree, and glazed baby carrots.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Herb-Crusted Lamb Rack</h3>
+                            <p class="menu-item-desc">Rosemary jus, pommes puree, glazed carrots</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$72</span>
+                    </div>
+                    <div class="menu-item" data-dish="lobster-risotto" data-img="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" data-desc="Butter-poached Maine lobster tail over creamy parmesan risotto with asparagus and lemon zest.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Lobster Risotto</h3>
+                            <p class="menu-item-desc">Butter-poached lobster, parmesan, asparagus</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$78</span>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-category" data-category="desserts">
+                    <div class="menu-item" data-dish="chocolate-fondant" data-img="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80" data-desc="Warm Valrhona chocolate fondant with a molten center, vanilla bean ice cream, and gold leaf.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Chocolate Fondant</h3>
+                            <p class="menu-item-desc">Molten center, vanilla ice cream, gold leaf</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$19</span>
+                    </div>
+                    <div class="menu-item" data-dish="creme-brulee" data-img="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80" data-desc="Classic Tahitian vanilla creme brulee with a perfectly caramelized sugar crust and fresh berries.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Creme Brulee</h3>
+                            <p class="menu-item-desc">Tahitian vanilla, caramelized sugar, fresh berries</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$16</span>
+                    </div>
+                    <div class="menu-item" data-dish="tiramisu" data-img="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80" data-desc="Our signature tiramisu with espresso-soaked ladyfingers, mascarpone cream, and cocoa dust.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Signature Tiramisu</h3>
+                            <p class="menu-item-desc">Espresso, mascarpone, cocoa dust</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$17</span>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-category" data-category="drinks">
+                    <div class="menu-item" data-dish="old-fashioned" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" data-desc="Our barrel-aged Old Fashioned with premium bourbon, Angostura bitters, orange peel, and a smoked cherry.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Barrel-Aged Old Fashioned</h3>
+                            <p class="menu-item-desc">Premium bourbon, Angostura, smoked cherry</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$21</span>
+                    </div>
+                    <div class="menu-item" data-dish="wine-selection" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80" data-desc="Hand-selected wines from Bordeaux, Tuscany, and Napa Valley. Ask your sommelier for pairing recommendations.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Sommelier's Selection</h3>
+                            <p class="menu-item-desc">Bordeaux, Tuscany, Napa Valley</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$18+</span>
+                    </div>
+                    <div class="menu-item" data-dish="espresso-martini" data-img="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80" data-desc="Freshly pulled espresso shaken with premium vodka, Kahlua, and a hint of vanilla.">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Espresso Martini</h3>
+                            <p class="menu-item-desc">Fresh espresso, vodka, Kahlua, vanilla</p>
+                        </div>
+                        <div class="menu-item-dots"></div>
+                        <span class="menu-item-price">$19</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Dish Modal -->
+    <div class="dish-modal" id="dishModal">
+        <div class="dish-modal-overlay" id="dishModalOverlay"></div>
+        <div class="dish-modal-content">
+            <button class="dish-modal-close" id="dishModalClose">&times;</button>
+            <div class="dish-modal-image-wrapper">
+                <img src="" alt="" class="dish-modal-image" id="dishModalImage">
+            </div>
+            <div class="dish-modal-info">
+                <h3 class="dish-modal-name" id="dishModalName"></h3>
+                <p class="dish-modal-desc" id="dishModalDesc"></p>
+                <span class="dish-modal-price" id="dishModalPrice"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <span class="section-label">Gallery</span>
+            <h2 class="section-title split-text">A Feast for the Eyes</h2>
+        </div>
+        <div class="gallery-scroll-wrapper">
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Plated dish">
+                    <div class="gallery-card-overlay">
+                        <span>Wood-Fired Perfection</span>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Fresh salad">
+                    <div class="gallery-card-overlay">
+                        <span>Farm to Table</span>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Pancakes">
+                    <div class="gallery-card-overlay">
+                        <span>Brunch Classics</span>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80" alt="Gourmet burger">
+                    <div class="gallery-card-overlay">
+                        <span>Bold Flavors</span>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="BBQ ribs">
+                    <div class="gallery-card-overlay">
+                        <span>Slow-Cooked</span>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&q=80" alt="Plated food">
+                    <div class="gallery-card-overlay">
+                        <span>Artful Plating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CHEF ==================== -->
+    <section class="chef" id="chef">
+        <div class="container">
+            <div class="chef-grid">
+                <div class="chef-image-wrapper">
+                    <div class="chef-image reveal-image">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="Head Chef">
+                    </div>
+                </div>
+                <div class="chef-content">
+                    <span class="section-label">The Chef</span>
+                    <h2 class="section-title split-text">Marcus Arellio</h2>
+                    <div class="gold-line"></div>
+                    <p class="chef-role fade-up">Executive Chef & Founder</p>
+                    <blockquote class="chef-quote" id="chefQuote">
+                        "Cooking is not just about feeding people. It's about creating moments they'll carry with them forever. Every flame, every aroma, every bite — it's a conversation between the kitchen and the soul."
+                    </blockquote>
+                    <div class="chef-decorative">
+                        <svg class="chef-deco-svg" viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="45" stroke="#c9a96e" stroke-width="0.5" opacity="0.3"/>
+                            <circle cx="50" cy="50" r="30" stroke="#c9a96e" stroke-width="0.5" opacity="0.2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Reviews</span>
+                <h2 class="section-title split-text">What Our Guests Say</h2>
+            </div>
+            <div class="testimonials-track" id="testimonialsTrack">
+                <div class="testimonial-card tilt-card">
+                    <div class="testimonial-stars">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                    </div>
+                    <p class="testimonial-text">"An extraordinary dining experience. The Wagyu ribeye was the best steak I've ever had — perfectly charred with an impossibly tender center. The ambiance is unmatched."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JW</div>
+                        <div>
+                            <strong>James Whitfield</strong>
+                            <span>Food Critic, The Daily Plate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card tilt-card">
+                    <div class="testimonial-stars">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                    </div>
+                    <p class="testimonial-text">"We celebrated our anniversary here and it was magical. The truffle burrata alone is worth the visit. Chef Marcus came to our table — such a personal touch."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SR</div>
+                        <div>
+                            <strong>Sophia Rodriguez</strong>
+                            <span>Regular Guest</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card tilt-card">
+                    <div class="testimonial-stars">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                    </div>
+                    <p class="testimonial-text">"From the moment you walk in, you know this is special. The open kitchen, the wood-fire aromas, the impeccable service. Ember & Oak sets the standard."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DK</div>
+                        <div>
+                            <strong>David Kim</strong>
+                            <span>Michelin Guide Contributor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RESERVATION ==================== -->
+    <section class="reservation" id="reservation">
+        <div class="reservation-bg">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80" alt="Restaurant interior">
+        </div>
+        <div class="reservation-overlay"></div>
+        <div class="container">
+            <div class="reservation-content">
+                <span class="section-label">Reservations</span>
+                <h2 class="section-title split-text">Reserve Your Table</h2>
+                <p class="reservation-subtitle fade-up">Join us for an unforgettable evening. Book your table and let us take care of the rest.</p>
+                <form class="reservation-form" id="reservationForm">
+                    <div class="form-row">
+                        <div class="form-group fade-up">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group fade-up">
+                            <label>Email</label>
+                            <input type="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group fade-up">
+                            <label>Date</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group fade-up">
+                            <label>Time</label>
+                            <select required>
+                                <option value="" disabled selected>Select Time</option>
+                                <option>6:00 PM</option>
+                                <option>6:30 PM</option>
+                                <option>7:00 PM</option>
+                                <option>7:30 PM</option>
+                                <option>8:00 PM</option>
+                                <option>8:30 PM</option>
+                                <option>9:00 PM</option>
+                                <option>9:30 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group fade-up">
+                            <label>Guests</label>
+                            <select required>
+                                <option value="" disabled selected>Number of Guests</option>
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                                <option>5 Guests</option>
+                                <option>6+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group fade-up">
+                            <label>Occasion</label>
+                            <select>
+                                <option value="" selected>Select Occasion (optional)</option>
+                                <option>Birthday</option>
+                                <option>Anniversary</option>
+                                <option>Date Night</option>
+                                <option>Business Dinner</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group fade-up">
+                        <label>Special Requests</label>
+                        <textarea placeholder="Dietary requirements, seating preferences, allergies..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold btn-block magnetic-btn fade-up">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Ember <span>&</span> Oak</h3>
+                    <p>Where fire meets flavor. An unforgettable fine dining experience in the heart of the city.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hours</h4>
+                    <p>Tuesday - Thursday: 5:30 PM - 10:00 PM</p>
+                    <p>Friday - Saturday: 5:00 PM - 11:00 PM</p>
+                    <p>Sunday: 5:00 PM - 9:00 PM</p>
+                    <p>Monday: Closed</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>42 Oakwood Avenue</p>
+                    <p>Downtown District</p>
+                    <p>+1 (555) 234-5678</p>
+                    <p>hello@emberandoak.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ember & Oak. All rights reserved.</p>
+                <a href="#hero" class="back-to-top magnetic-btn" aria-label="Back to top">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="18 15 12 9 6 15"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
