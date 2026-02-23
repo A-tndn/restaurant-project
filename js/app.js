@@ -255,9 +255,9 @@
 
     // Initial menu items animation
     document.querySelectorAll('.menu-category.active .menu-item').forEach((item, i) => {
-        gsap.to(item, {
-            opacity: 1,
-            y: 0,
+        gsap.from(item, {
+            opacity: 0,
+            y: 20,
             duration: 0.6,
             delay: i * 0.1,
             ease: 'power3.out',

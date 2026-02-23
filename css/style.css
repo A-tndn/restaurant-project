@@ -783,13 +783,6 @@ button, input, select, textarea { font-family: inherit; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     cursor: pointer;
     transition: all var(--transition);
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.menu-item.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .menu-item:hover {
