@@ -225,7 +225,7 @@
 
     menuTabs.forEach((tab) => {
         tab.addEventListener('click', () => {
-            closeShowcase();
+            closeReveal();
             const category = tab.dataset.category;
 
             menuTabs.forEach((t) => t.classList.remove('active'));
@@ -269,149 +269,130 @@
         });
     });
 
-    // ========== Dish Showcase (Inline) ==========
-    const dishShowcase = document.getElementById('dishShowcase');
-    const dishShowcaseClose = document.getElementById('dishShowcaseClose');
-    const dishShowcaseImage = document.getElementById('dishShowcaseImage');
-    const dishShowcaseName = document.getElementById('dishShowcaseName');
-    const dishShowcaseDesc = document.getElementById('dishShowcaseDesc');
-    const dishShowcasePrice = document.getElementById('dishShowcasePrice');
-    let showcaseOpen = false;
-    let currentShowcaseItem = null;
-    let showcaseTimeline = null;
+    // ========== Dish Reveal (Inline per item) ==========
+    const dishReveal = document.createElement('div');
+    dishReveal.className = 'dish-reveal';
+    dishReveal.innerHTML = `
+        <div class="dish-reveal-info">
+            <p class="dish-reveal-desc"></p>
+            <span class="dish-reveal-price"></span>
+        </div>
+        <div class="dish-reveal-plate">
+            <img src="" alt="">
+            <div class="plate-shadow"></div>
+        </div>`;
 
-    function setShowcaseContent(item) {
-        dishShowcaseImage.src = item.dataset.img;
-        dishShowcaseImage.alt = item.querySelector('.menu-item-name').textContent;
-        dishShowcaseName.textContent = item.querySelector('.menu-item-name').textContent;
-        dishShowcaseDesc.textContent = item.dataset.desc;
-        dishShowcasePrice.textContent = item.querySelector('.menu-item-price').textContent;
-    }
+    let revealOpen = false;
+    let currentRevealItem = null;
+    let revealTimeline = null;
 
-    function openShowcase(item) {
-        document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
-        item.classList.add('selected');
-        currentShowcaseItem = item;
+    function openReveal(item) {
+        const img = item.dataset.img;
+        const name = item.querySelector('.menu-item-name').textContent;
+        const desc = item.dataset.desc;
+        const price = item.querySelector('.menu-item-price').textContent;
 
-        if (showcaseOpen) {
-            // Swap: slide current plate out left, new plate in from right
-            if (showcaseTimeline) showcaseTimeline.kill();
-            showcaseTimeline = gsap.timeline();
-            showcaseTimeline
-                .to('#dishShowcasePlate', {
-                    x: '-60%', opacity: 0, rotation: -30,
-                    duration: 0.4, ease: 'power2.in',
-                })
-                .to('#dishShowcaseDetails', {
-                    y: 15, opacity: 0,
-                    duration: 0.3, ease: 'power2.in',
-                }, '-=0.35')
-                .call(() => setShowcaseContent(item))
-                .fromTo('#dishShowcasePlate',
-                    { x: '100%', opacity: 0, rotation: 60 },
-                    { x: '0%', opacity: 1, rotation: 0, duration: 1, ease: 'power3.out' }
-                )
-                .to('.dish-showcase-divider', { scaleX: 1, duration: 0.4, ease: 'power2.out' }, '-=0.7')
-                .fromTo('#dishShowcaseDetails',
-                    { y: -40, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
-                    '-=0.6'
-                );
+        // If open on a different item, close first then reopen
+        if (revealOpen && currentRevealItem !== item) {
+            closeReveal(() => doOpenReveal(item, img, desc, price, name));
             return;
         }
 
-        // First open
-        setShowcaseContent(item);
-        showcaseOpen = true;
-
-        gsap.set('#dishShowcasePlate', { x: '100vw', rotation: 90, opacity: 0 });
-        gsap.set('#dishShowcaseDetails', { y: -50, opacity: 0 });
-        gsap.set('#dishShowcaseClose', { opacity: 0 });
-        gsap.set('.dish-showcase-divider', { scaleX: 0 });
-
-        dishShowcase.style.display = 'block';
-        dishShowcase.style.overflow = 'hidden';
-
-        gsap.fromTo(dishShowcase,
-            { height: 0, opacity: 0 },
-            {
-                height: 'auto', opacity: 1,
-                duration: 0.7, ease: 'power3.out',
-                onComplete: () => {
-                    dishShowcase.style.overflow = 'visible';
-                    dishShowcase.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                },
-            }
-        );
-
-        if (showcaseTimeline) showcaseTimeline.kill();
-        showcaseTimeline = gsap.timeline({ delay: 0.3 });
-        showcaseTimeline
-            // Plate slides in from the right
-            .to('#dishShowcasePlate', {
-                x: '0%', rotation: 0, opacity: 1,
-                duration: 1.2, ease: 'power3.out',
-            })
-            // Dish name slides down from above to center
-            .to('#dishShowcaseDetails', {
-                y: 0, opacity: 1,
-                duration: 0.7, ease: 'power3.out',
-            }, '-=0.6')
-            // Gold divider draws itself
-            .to('.dish-showcase-divider', {
-                scaleX: 1, duration: 0.5, ease: 'power2.out',
-            }, '-=0.4')
-            // Close button fades in
-            .to('#dishShowcaseClose', {
-                opacity: 1, duration: 0.3,
-            }, '-=0.3');
+        doOpenReveal(item, img, desc, price, name);
     }
 
-    function closeShowcase() {
-        if (!showcaseOpen) return;
-        showcaseOpen = false;
+    function doOpenReveal(item, img, desc, price, name) {
+        // Set content
+        dishReveal.querySelector('.dish-reveal-desc').textContent = desc;
+        dishReveal.querySelector('.dish-reveal-price').textContent = price;
+        dishReveal.querySelector('img').src = img;
+        dishReveal.querySelector('img').alt = name;
+
+        // Highlight selected
         document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
-        currentShowcaseItem = null;
+        item.classList.add('selected');
+        currentRevealItem = item;
 
-        if (showcaseTimeline) showcaseTimeline.kill();
-        dishShowcase.style.overflow = 'hidden';
+        // Insert reveal into the clicked menu item
+        item.appendChild(dishReveal);
 
-        showcaseTimeline = gsap.timeline({
+        // Reset and animate
+        gsap.set(dishReveal, { height: 0, opacity: 0, overflow: 'hidden' });
+        gsap.set(dishReveal.querySelector('.dish-reveal-plate'), { x: '100%', rotation: 60, opacity: 0 });
+        gsap.set(dishReveal.querySelector('.dish-reveal-info'), { opacity: 0, x: -20 });
+
+        revealOpen = true;
+
+        if (revealTimeline) revealTimeline.kill();
+        revealTimeline = gsap.timeline();
+        revealTimeline
+            // Expand the reveal area
+            .to(dishReveal, {
+                height: 'auto', opacity: 1,
+                duration: 0.5, ease: 'power3.out',
+                onComplete: () => { dishReveal.style.overflow = 'visible'; },
+            })
+            // Plate slides in from the right with rotation
+            .to(dishReveal.querySelector('.dish-reveal-plate'), {
+                x: '0%', rotation: 0, opacity: 1,
+                duration: 0.8, ease: 'power3.out',
+            }, '-=0.3')
+            // Description fades in from left
+            .to(dishReveal.querySelector('.dish-reveal-info'), {
+                opacity: 1, x: 0,
+                duration: 0.5, ease: 'power3.out',
+            }, '-=0.5');
+    }
+
+    function closeReveal(callback) {
+        if (!revealOpen) {
+            if (callback) callback();
+            return;
+        }
+
+        if (revealTimeline) revealTimeline.kill();
+        dishReveal.style.overflow = 'hidden';
+
+        revealTimeline = gsap.timeline({
             onComplete: () => {
-                dishShowcase.style.display = 'none';
-                gsap.set(dishShowcase, { height: 0, opacity: 0 });
+                if (dishReveal.parentNode) {
+                    dishReveal.parentNode.removeChild(dishReveal);
+                }
+                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
+                currentRevealItem = null;
+                revealOpen = false;
+                if (callback) callback();
             },
         });
 
-        showcaseTimeline
-            .to('#dishShowcaseClose', { opacity: 0, duration: 0.2 })
-            .to('#dishShowcaseDetails', { y: 15, opacity: 0, duration: 0.3, ease: 'power2.in' }, '-=0.1')
-            // Plate slides out to the right
-            .to('#dishShowcasePlate', {
-                x: '100%', rotation: 45, opacity: 0,
-                duration: 0.7, ease: 'power3.in',
-            }, '-=0.2')
-            .to(dishShowcase, {
+        revealTimeline
+            .to(dishReveal.querySelector('.dish-reveal-plate'), {
+                x: '100%', rotation: 30, opacity: 0,
+                duration: 0.4, ease: 'power2.in',
+            })
+            .to(dishReveal.querySelector('.dish-reveal-info'), {
+                opacity: 0, x: -15,
+                duration: 0.2, ease: 'power2.in',
+            }, '-=0.3')
+            .to(dishReveal, {
                 height: 0, opacity: 0,
-                duration: 0.4, ease: 'power3.inOut',
-            }, '-=0.2');
+                duration: 0.3, ease: 'power3.inOut',
+            }, '-=0.1');
     }
 
     document.querySelectorAll('.menu-item').forEach((item) => {
         item.addEventListener('click', () => {
-            if (currentShowcaseItem === item && showcaseOpen) {
-                closeShowcase();
+            if (currentRevealItem === item && revealOpen) {
+                closeReveal();
                 return;
             }
-            openShowcase(item);
+            openReveal(item);
         });
     });
 
-    dishShowcaseClose.addEventListener('click', closeShowcase);
-
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && showcaseOpen) {
-            closeShowcase();
+        if (e.key === 'Escape' && revealOpen) {
+            closeReveal();
         }
     });
 
