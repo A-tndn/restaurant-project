@@ -474,16 +474,21 @@
     });
 
     // Testimonial entrance
-    gsap.from('.testimonial-card', {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-            trigger: '.testimonials-track',
-            start: 'top 80%',
-            toggleActions: 'play none none none',
+    ScrollTrigger.create({
+        trigger: '.testimonials-track',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+            gsap.fromTo('.testimonial-card',
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: 'power3.out',
+                }
+            );
         },
     });
 

@@ -1064,6 +1064,8 @@ button, input, select, textarea { font-family: inherit; }
     transition: all var(--transition);
     transform-style: preserve-3d;
     perspective: 1000px;
+    opacity: 1;
+    visibility: visible;
 }
 
 .testimonial-card:hover {
