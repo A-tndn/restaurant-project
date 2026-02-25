@@ -547,8 +547,8 @@
             e.preventDefault();
             const btn = reservationForm.querySelector('.btn');
             const origText = btn.textContent;
-            btn.textContent = 'Reservation Confirmed!';
-            btn.style.background = '#22c55e';
+            btn.textContent = 'Message Sent!';
+            btn.style.background = '#00BCD4';
             setTimeout(() => {
                 btn.textContent = origText;
                 btn.style.background = '';

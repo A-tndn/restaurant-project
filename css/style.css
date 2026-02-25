@@ -5,16 +5,16 @@
     --dark: #111111;
     --dark-card: #1c1c1c;
     --dark-border: #2a2a2a;
-    --gold: #c9a96e;
-    --gold-light: #d4b87a;
-    --gold-dark: #a8893e;
-    --cream: #f5f0e8;
-    --cream-muted: #b8b0a2;
-    --brown: #3d2b1f;
+    --gold: #00E5FF;
+    --gold-light: #33ECFF;
+    --gold-dark: #00BCD4;
+    --cream: #f5f5f5;
+    --cream-muted: #aaaaaa;
+    --brown: #0d1117;
     --white: #ffffff;
-    --text: #e8e4de;
-    --text-muted: #8a847a;
-    --font-display: 'Playfair Display', Georgia, serif;
+    --text: #e0e0e0;
+    --text-muted: #888888;
+    --font-display: 'Sora', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
     --font-accent: 'Cormorant Garamond', Georgia, serif;
     --radius: 4px;
@@ -87,7 +87,7 @@ button, input, select, textarea { font-family: inherit; }
     width: 60px;
     height: 60px;
     border-color: var(--gold-light);
-    background: rgba(201, 169, 110, 0.08);
+    background: rgba(0, 229, 255, 0.08);
 }
 
 /* ========== Preloader ========== */
@@ -152,7 +152,7 @@ button, input, select, textarea { font-family: inherit; }
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.1);
 }
 
 .nav-container {
@@ -343,7 +343,7 @@ button, input, select, textarea { font-family: inherit; }
 .btn-gold:hover {
     background: var(--gold-light);
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(201, 169, 110, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 229, 255, 0.3);
 }
 
 .btn-outline-gold {
@@ -438,7 +438,7 @@ button, input, select, textarea { font-family: inherit; }
     border-radius: 50%;
     opacity: 0;
     animation: emberFloat linear infinite;
-    box-shadow: 0 0 6px var(--gold), 0 0 12px rgba(201, 169, 110, 0.3);
+    box-shadow: 0 0 6px var(--gold), 0 0 12px rgba(0, 229, 255, 0.3);
 }
 
 .ember:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
@@ -835,8 +835,8 @@ button, input, select, textarea { font-family: inherit; }
 /* ========== Dish Reveal (Inline per item) ========== */
 .menu-item.selected {
     flex-wrap: wrap;
-    background: rgba(201, 169, 110, 0.04);
-    border-bottom-color: rgba(201, 169, 110, 0.15);
+    background: rgba(0, 229, 255, 0.04);
+    border-bottom-color: rgba(0, 229, 255, 0.15);
 }
 
 .menu-item.selected .menu-item-name {
@@ -1067,7 +1067,7 @@ button, input, select, textarea { font-family: inherit; }
 }
 
 .testimonial-card:hover {
-    border-color: rgba(201, 169, 110, 0.3);
+    border-color: rgba(0, 229, 255, 0.3);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 

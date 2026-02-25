@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ember & Oak — Fine Dining Experience</title>
-    <meta name="description" content="Ember & Oak — An immersive fine dining experience where culinary artistry meets modern elegance.">
+    <title>Atom Aqua — India's Next Lifestyle Water Brand</title>
+    <meta name="description" content="Atom Aqua — A lifestyle premium packaged drinking water brand from India. Minimal by design, premium by intention, Indian by origin.">
+    <meta property="og:title" content="Atom Aqua — India's Next Lifestyle Water Brand">
+    <meta property="og:description" content="We're not selling water. We're building a brand people choose.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1200&q=80">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,20 +21,18 @@
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="preloader-logo">
-                <span class="preloader-char">E</span>
+                <span class="preloader-char">A</span>
+                <span class="preloader-char">t</span>
+                <span class="preloader-char">o</span>
                 <span class="preloader-char">m</span>
-                <span class="preloader-char">b</span>
-                <span class="preloader-char">e</span>
-                <span class="preloader-char">r</span>
                 <span class="preloader-char">&nbsp;</span>
-                <span class="preloader-char">&</span>
-                <span class="preloader-char">&nbsp;</span>
-                <span class="preloader-char">O</span>
+                <span class="preloader-char">A</span>
+                <span class="preloader-char">q</span>
+                <span class="preloader-char">u</span>
                 <span class="preloader-char">a</span>
-                <span class="preloader-char">k</span>
             </div>
             <div class="preloader-line"></div>
-            <p class="preloader-tagline">Fine Dining Experience</p>
+            <p class="preloader-tagline">India's Next Lifestyle Water Brand</p>
         </div>
     </div>
 
@@ -40,14 +43,14 @@
     <!-- ==================== NAVIGATION ==================== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Ember <span>&</span> Oak</a>
+            <a href="#" class="nav-logo">Atom <span>Aqua</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#chef">The Chef</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#reservation" class="nav-reserve-btn">Reserve a Table</a></li>
+                <li><a href="#about">Story</a></li>
+                <li><a href="#menu">Philosophy</a></li>
+                <li><a href="#gallery">Product</a></li>
+                <li><a href="#chef">Lifestyle</a></li>
+                <li><a href="#testimonials">Numbers</a></li>
+                <li><a href="#reservation" class="nav-reserve-btn">Get in Touch</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
@@ -60,23 +63,23 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-menu-links">
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#chef">The Chef</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#reservation">Reserve a Table</a></li>
+            <li><a href="#about">Story</a></li>
+            <li><a href="#menu">Philosophy</a></li>
+            <li><a href="#gallery">Product</a></li>
+            <li><a href="#chef">Lifestyle</a></li>
+            <li><a href="#testimonials">Numbers</a></li>
+            <li><a href="#reservation">Get in Touch</a></li>
         </ul>
     </div>
 
     <!-- ==================== HERO ==================== -->
     <section class="hero" id="hero">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80" alt="Fine dining ambiance" class="hero-bg-img">
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1920&q=80" alt="Premium water dark background" class="hero-bg-img">
         </div>
         <div class="hero-overlay"></div>
 
-        <!-- Floating embers -->
+        <!-- Floating particles (water droplets) -->
         <div class="embers">
             <div class="ember"></div>
             <div class="ember"></div>
@@ -89,15 +92,16 @@
         </div>
 
         <div class="hero-content">
-            <p class="hero-badge">Est. 2018 &mdash; Fine Dining</p>
+            <p class="hero-badge">India's Next Lifestyle Water Brand</p>
             <h1 class="hero-title" id="heroTitle">
-                <span class="hero-line">Where Fire</span>
-                <span class="hero-line">Meets <em>Flavor</em></span>
+                <span class="hero-line">We're Not Selling Water.</span>
+                <span class="hero-line">We're Building a Brand</span>
+                <span class="hero-line">People <em>Choose.</em></span>
             </h1>
-            <p class="hero-subtitle">An unforgettable culinary journey through wood-fired cuisine, crafted with passion and served with elegance.</p>
+            <p class="hero-subtitle">Minimal by design, premium by intention, Indian by origin. Water reimagined for a generation that cares.</p>
             <div class="hero-buttons">
-                <a href="#menu" class="btn btn-gold magnetic-btn">Explore Menu</a>
-                <a href="#reservation" class="btn btn-outline-gold magnetic-btn">Reserve a Table</a>
+                <a href="#about" class="btn btn-gold magnetic-btn">Discover the Story</a>
+                <a href="#reservation" class="btn btn-outline-gold magnetic-btn">Join the Movement</a>
             </div>
         </div>
 
@@ -107,34 +111,34 @@
         </div>
     </section>
 
-    <!-- ==================== ABOUT ==================== -->
+    <!-- ==================== ABOUT / ORIGIN STORY ==================== -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image-wrapper">
                     <div class="about-image reveal-image">
-                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80" alt="Restaurant interior">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Mountain spring water source">
                     </div>
                     <div class="about-image-accent"></div>
                 </div>
                 <div class="about-content">
                     <span class="section-label">Our Story</span>
-                    <h2 class="section-title split-text">A Legacy of Flavor & Craft</h2>
+                    <h2 class="section-title split-text">Born From a Simple Belief</h2>
                     <div class="gold-line"></div>
-                    <p class="about-text fade-up">Born from a love of open-flame cooking and seasonal ingredients, Ember & Oak has redefined fine dining since 2018. Every dish tells a story of tradition, innovation, and the pure joy of gathering around a table.</p>
-                    <p class="about-text fade-up">Our kitchen is guided by simplicity — the best ingredients, treated with respect, elevated by fire. From our hand-built oak-wood oven to our locally sourced produce, every detail matters.</p>
+                    <p class="about-text fade-up">Atom Aqua was born from a simple observation: the most essential thing we consume every day — water — has been stripped of all meaning. It's a commodity. An afterthought. A &#8377;20 decision made without thinking.</p>
+                    <p class="about-text fade-up">We believe water deserves better. And so do the people who drink it. Atom Aqua is designed for a generation that cares about what they put in their body, what they're seen holding, and what brands they align with.</p>
                     <div class="about-stats">
                         <div class="about-stat fade-up">
-                            <span class="stat-num" data-target="8">0</span>
-                            <span class="stat-text">Years of Excellence</span>
+                            <span class="stat-num" data-target="0">0</span>
+                            <span class="stat-text">Manufacturing Capex</span>
                         </div>
                         <div class="about-stat fade-up">
-                            <span class="stat-num" data-target="150">0</span>
-                            <span class="stat-text">Signature Dishes</span>
+                            <span class="stat-num" data-target="100">0</span>
+                            <span class="stat-text">% Brand-Owned IP</span>
                         </div>
                         <div class="about-stat fade-up">
-                            <span class="stat-num" data-target="12">0</span>
-                            <span class="stat-text">Awards Won</span>
+                            <span class="stat-num" data-target="1">0</span>
+                            <span class="stat-text">Metro Launch Market</span>
                         </div>
                     </div>
                 </div>
@@ -142,149 +146,149 @@
         </div>
     </section>
 
-    <!-- ==================== MENU ==================== -->
+    <!-- ==================== PHILOSOPHY / DIFFERENTIATION ==================== -->
     <section class="menu" id="menu">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">The Menu</span>
-                <h2 class="section-title split-text">Crafted with Passion</h2>
-                <p class="section-subtitle fade-up">Each dish is a celebration of bold flavors, premium ingredients, and the art of wood-fired cooking.</p>
+                <span class="section-label">Philosophy</span>
+                <h2 class="section-title split-text">What Makes Us Different</h2>
+                <p class="section-subtitle fade-up">We're not just another bottled water company. We're building a brand that stands for something.</p>
             </div>
 
             <div class="menu-tabs">
-                <button class="menu-tab active" data-category="starters">Starters</button>
-                <button class="menu-tab" data-category="mains">Mains</button>
-                <button class="menu-tab" data-category="desserts">Desserts</button>
-                <button class="menu-tab" data-category="drinks">Drinks</button>
+                <button class="menu-tab active" data-category="starters">Design</button>
+                <button class="menu-tab" data-category="mains">Distribution</button>
+                <button class="menu-tab" data-category="desserts">Product</button>
+                <button class="menu-tab" data-category="drinks">Vision</button>
             </div>
 
             <div class="menu-list" id="menuList">
 
-                <!-- Starters -->
+                <!-- Design -->
                 <div class="menu-category active" data-category="starters">
-                    <div class="menu-item" data-dish="truffle-burrata" data-img="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" data-desc="Creamy burrata with black truffle shavings, heirloom tomatoes, aged balsamic, and micro basil on toasted sourdough.">
+                    <div class="menu-item" data-dish="design-first" data-img="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" data-desc="Premium visual identity — clean, modern, Instagram-native. Every touchpoint is designed to be shared. From label to shelf, Atom Aqua is unmistakably intentional.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Truffle Burrata</h3>
-                            <p class="menu-item-desc">Black truffle, heirloom tomatoes, aged balsamic</p>
+                            <h3 class="menu-item-name">Design-First Identity</h3>
+                            <p class="menu-item-desc">Clean, modern, Instagram-native visual identity</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$24</span>
+                        <span class="menu-item-price">&#10022;</span>
                     </div>
-                    <div class="menu-item" data-dish="oak-smoked-salmon" data-img="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80" data-desc="House-smoked Atlantic salmon with dill cream, capers, pickled shallots, and pumpernickel crisp.">
+                    <div class="menu-item" data-dish="premium-positioning" data-img="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80" data-desc="Our pricing signals value and filters our audience. Atom Aqua is a conscious choice, not a default one. A &#8377;50-100 statement of identity.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Oak-Smoked Salmon</h3>
-                            <p class="menu-item-desc">Dill cream, capers, pickled shallots</p>
+                            <h3 class="menu-item-name">Premium Positioning</h3>
+                            <p class="menu-item-desc">Pricing that signals value and filters audience</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$22</span>
+                        <span class="menu-item-price">&#9670;</span>
                     </div>
-                    <div class="menu-item" data-dish="charred-octopus" data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" data-desc="Tender charred octopus with chorizo oil, roasted peppers, fingerling potatoes, and fresh parsley.">
+                    <div class="menu-item" data-dish="compliance-first" data-img="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" data-desc="Built for scale from day one. Every process, every partner, every label — fully compliant and audit-ready. No shortcuts.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Charred Octopus</h3>
-                            <p class="menu-item-desc">Chorizo oil, roasted peppers, fingerling potatoes</p>
+                            <h3 class="menu-item-name">Compliance-First</h3>
+                            <p class="menu-item-desc">Fully compliant and audit-ready from day one</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$28</span>
+                        <span class="menu-item-price">&#9673;</span>
                     </div>
-                    <div class="menu-item" data-dish="mushroom-soup" data-img="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" data-desc="Velvety wild mushroom soup with truffle oil, crispy sage, and a touch of sherry cream.">
+                    <div class="menu-item" data-dish="brand-owned" data-img="https://images.unsplash.com/photo-1523475496153-3d6cc0f0bf19?w=600&q=80" data-desc="100% brand-owned intellectual property. From trademark to design language, everything is ours — built for long-term equity.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Wild Mushroom Veloute</h3>
-                            <p class="menu-item-desc">Truffle oil, crispy sage, sherry cream</p>
+                            <h3 class="menu-item-name">100% Brand-Owned IP</h3>
+                            <p class="menu-item-desc">Complete ownership of brand and design language</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$18</span>
+                        <span class="menu-item-price">&#9672;</span>
                     </div>
                 </div>
 
-                <!-- Mains -->
+                <!-- Distribution -->
                 <div class="menu-category" data-category="mains">
-                    <div class="menu-item" data-dish="wagyu-ribeye" data-img="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80" data-desc="A5 Wagyu ribeye seared over oak embers, served with bone marrow butter, roasted garlic, and seasonal vegetables.">
+                    <div class="menu-item" data-dish="controlled-dist" data-img="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" data-desc="Available exclusively at gyms, cafes, yoga studios, and boutique hotels. We choose where we show up. Zero mass retail.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Wagyu Ribeye</h3>
-                            <p class="menu-item-desc">Oak-fired, bone marrow butter, seasonal vegetables</p>
+                            <h3 class="menu-item-name">Controlled Distribution</h3>
+                            <p class="menu-item-desc">Exclusive placement at premium venues</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$85</span>
+                        <span class="menu-item-price">&#9672;</span>
                     </div>
-                    <div class="menu-item" data-dish="sea-bass" data-img="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=600&q=80" data-desc="Pan-seared Chilean sea bass with saffron risotto, beurre blanc, and roasted fennel.">
+                    <div class="menu-item" data-dish="gym-channel" data-img="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" data-desc="Premium gyms and fitness studios — where health-conscious consumers make intentional choices about what they consume.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Chilean Sea Bass</h3>
-                            <p class="menu-item-desc">Saffron risotto, beurre blanc, roasted fennel</p>
+                            <h3 class="menu-item-name">Boutique Gyms</h3>
+                            <p class="menu-item-desc">Fitness studios and premium workout spaces</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$62</span>
+                        <span class="menu-item-price">&#10022;</span>
                     </div>
-                    <div class="menu-item" data-dish="lamb-rack" data-img="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" data-desc="Herb-crusted lamb rack with rosemary jus, pommes puree, and glazed baby carrots.">
+                    <div class="menu-item" data-dish="cafe-channel" data-img="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" data-desc="Specialty coffee shops and cafes — curated environments where people already pay a premium for experience and quality.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Herb-Crusted Lamb Rack</h3>
-                            <p class="menu-item-desc">Rosemary jus, pommes puree, glazed carrots</p>
+                            <h3 class="menu-item-name">Specialty Cafes</h3>
+                            <p class="menu-item-desc">Curated coffee shops and modern cafes</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$72</span>
+                        <span class="menu-item-price">&#10022;</span>
                     </div>
-                    <div class="menu-item" data-dish="lobster-risotto" data-img="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" data-desc="Butter-poached Maine lobster tail over creamy parmesan risotto with asparagus and lemon zest.">
+                    <div class="menu-item" data-dish="hotel-channel" data-img="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" data-desc="Boutique hotels and wellness retreats — spaces that value design, curation, and the guest experience above all.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Lobster Risotto</h3>
-                            <p class="menu-item-desc">Butter-poached lobster, parmesan, asparagus</p>
+                            <h3 class="menu-item-name">Boutique Hotels</h3>
+                            <p class="menu-item-desc">Lifestyle hotels and wellness retreats</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$78</span>
+                        <span class="menu-item-price">&#10022;</span>
                     </div>
                 </div>
 
-                <!-- Desserts -->
+                <!-- Product -->
                 <div class="menu-category" data-category="desserts">
-                    <div class="menu-item" data-dish="chocolate-fondant" data-img="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" data-desc="Warm Valrhona chocolate fondant with a molten center, vanilla bean ice cream, and gold leaf.">
+                    <div class="menu-item" data-dish="500ml" data-img="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80" data-desc="The Daily Essential — perfect for your gym bag, your desk, your studio session. Designed to be seen and shared.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Chocolate Fondant</h3>
-                            <p class="menu-item-desc">Molten center, vanilla ice cream, gold leaf</p>
+                            <h3 class="menu-item-name">500 ml — The Daily Essential</h3>
+                            <p class="menu-item-desc">Perfect for gym, desk, and studio</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$19</span>
+                        <span class="menu-item-price">&#8377;50-60</span>
                     </div>
-                    <div class="menu-item" data-dish="creme-brulee" data-img="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80" data-desc="Classic Tahitian vanilla creme brulee with a perfectly caramelized sugar crust and fresh berries.">
+                    <div class="menu-item" data-dish="1litre" data-img="https://images.unsplash.com/photo-1616118132534-381148571cd4?w=600&q=80" data-desc="The Full Experience — for those who want more. Hydration as a lifestyle statement. Premium format for premium moments.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Creme Brulee</h3>
-                            <p class="menu-item-desc">Tahitian vanilla, caramelized sugar, fresh berries</p>
+                            <h3 class="menu-item-name">1 Litre — The Full Experience</h3>
+                            <p class="menu-item-desc">Hydration as a lifestyle statement</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$16</span>
+                        <span class="menu-item-price">&#8377;80-100</span>
                     </div>
-                    <div class="menu-item" data-dish="tiramisu" data-img="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80" data-desc="Our signature tiramisu with espresso-soaked ladyfingers, mascarpone cream, and cocoa dust.">
+                    <div class="menu-item" data-dish="coming-soon" data-img="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80" data-desc="More formats coming soon. Glass bottles, sparkling variants, and limited editions. Some things are worth waiting for.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Signature Tiramisu</h3>
-                            <p class="menu-item-desc">Espresso, mascarpone, cocoa dust</p>
+                            <h3 class="menu-item-name">Coming Soon — New Formats</h3>
+                            <p class="menu-item-desc">Glass, sparkling, and limited editions</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$17</span>
+                        <span class="menu-item-price">&#8734;</span>
                     </div>
                 </div>
 
-                <!-- Drinks -->
+                <!-- Vision -->
                 <div class="menu-category" data-category="drinks">
-                    <div class="menu-item" data-dish="old-fashioned" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" data-desc="Our barrel-aged Old Fashioned with premium bourbon, Angostura bitters, orange peel, and a smoked cherry.">
+                    <div class="menu-item" data-dish="asset-light" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" data-desc="Brand-owner model with licensed third-party bottling. Low capex, rapid entry, flexible scaling — without manufacturing risk.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Barrel-Aged Old Fashioned</h3>
-                            <p class="menu-item-desc">Premium bourbon, Angostura, smoked cherry</p>
+                            <h3 class="menu-item-name">Asset-Light Model</h3>
+                            <p class="menu-item-desc">Brand-owner model, zero manufacturing capex</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$21</span>
+                        <span class="menu-item-price">&#8377;0 Cr</span>
                     </div>
-                    <div class="menu-item" data-dish="wine-selection" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80" data-desc="Hand-selected wines from Bordeaux, Tuscany, and Napa Valley. Ask your sommelier for pairing recommendations.">
+                    <div class="menu-item" data-dish="identity-shift" data-img="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" data-desc="Consumer behavior is shifting from utility to identity-driven purchasing. Urban India pays a premium for coffee, fitness, wellness — and now, water.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Sommelier's Selection</h3>
-                            <p class="menu-item-desc">Bordeaux, Tuscany, Napa Valley</p>
+                            <h3 class="menu-item-name">The Identity Shift</h3>
+                            <p class="menu-item-desc">From utility to identity-driven consumption</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$18+</span>
+                        <span class="menu-item-price">&#10022;</span>
                     </div>
-                    <div class="menu-item" data-dish="espresso-martini" data-img="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80" data-desc="Freshly pulled espresso shaken with premium vodka, Kahlua, and a hint of vanilla.">
+                    <div class="menu-item" data-dish="repeat-purchase" data-img="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&q=80" data-desc="Water is consumed daily — the ultimate repeat-purchase lifestyle product. High frequency, high retention, infinite runway.">
                         <div class="menu-item-info">
-                            <h3 class="menu-item-name">Espresso Martini</h3>
-                            <p class="menu-item-desc">Fresh espresso, vodka, Kahlua, vanilla</p>
+                            <h3 class="menu-item-name">Daily Repeat Purchase</h3>
+                            <p class="menu-item-desc">Ultimate high-frequency lifestyle product</p>
                         </div>
                         <div class="menu-item-dots"></div>
-                        <span class="menu-item-price">$19</span>
+                        <span class="menu-item-price">&#8734;</span>
                     </div>
                 </div>
 
@@ -293,75 +297,75 @@
         </div>
     </section>
 
-    <!-- ==================== GALLERY ==================== -->
+    <!-- ==================== LIFESTYLE GALLERY ==================== -->
     <section class="gallery" id="gallery">
         <div class="section-header">
-            <span class="section-label">Gallery</span>
-            <h2 class="section-title split-text">A Feast for the Eyes</h2>
+            <span class="section-label">The Product</span>
+            <h2 class="section-title split-text">Where You'll Find Us</h2>
         </div>
         <div class="gallery-scroll-wrapper">
             <div class="gallery-track" id="galleryTrack">
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Plated dish">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Premium gym">
                     <div class="gallery-card-overlay">
-                        <span>Wood-Fired Perfection</span>
+                        <span>Boutique Gyms</span>
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Fresh salad">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="Specialty cafe">
                     <div class="gallery-card-overlay">
-                        <span>Farm to Table</span>
+                        <span>Specialty Caf&eacute;s</span>
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Pancakes">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="Yoga studio">
                     <div class="gallery-card-overlay">
-                        <span>Brunch Classics</span>
+                        <span>Yoga Studios</span>
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80" alt="Gourmet burger">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Boutique hotel">
                     <div class="gallery-card-overlay">
-                        <span>Bold Flavors</span>
+                        <span>Boutique Hotels</span>
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="BBQ ribs">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Co-working space">
                     <div class="gallery-card-overlay">
-                        <span>Slow-Cooked</span>
+                        <span>Co-working Spaces</span>
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&q=80" alt="Plated food">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80" alt="Premium retail">
                     <div class="gallery-card-overlay">
-                        <span>Artful Plating</span>
+                        <span>Premium Retail</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== CHEF ==================== -->
+    <!-- ==================== LIFESTYLE / VISION ==================== -->
     <section class="chef" id="chef">
         <div class="container">
             <div class="chef-grid">
                 <div class="chef-image-wrapper">
                     <div class="chef-image reveal-image">
-                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="Head Chef">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80" alt="Mountain landscape">
                     </div>
                 </div>
                 <div class="chef-content">
-                    <span class="section-label">The Chef</span>
-                    <h2 class="section-title split-text">Marcus Arellio</h2>
+                    <span class="section-label">The Vision</span>
+                    <h2 class="section-title split-text">The Category Is Ready</h2>
                     <div class="gold-line"></div>
-                    <p class="chef-role fade-up">Executive Chef & Founder</p>
+                    <p class="chef-role fade-up">Water Reimagined for Urban India</p>
                     <blockquote class="chef-quote" id="chefQuote">
-                        "Cooking is not just about feeding people. It's about creating moments they'll carry with them forever. Every flame, every aroma, every bite — it's a conversation between the kitchen and the soul."
+                        "To build a trusted, design-led water brand that becomes synonymous with conscious urban living. We're not competing on price — we're building something people are proud to hold."
                     </blockquote>
                     <div class="chef-decorative">
                         <svg class="chef-deco-svg" viewBox="0 0 100 100" fill="none">
-                            <circle cx="50" cy="50" r="45" stroke="#c9a96e" stroke-width="0.5" opacity="0.3"/>
-                            <circle cx="50" cy="50" r="30" stroke="#c9a96e" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="50" cy="50" r="45" stroke="#00E5FF" stroke-width="0.5" opacity="0.3"/>
+                            <circle cx="50" cy="50" r="30" stroke="#00E5FF" stroke-width="0.5" opacity="0.2"/>
                         </svg>
                     </div>
                 </div>
@@ -369,50 +373,50 @@
         </div>
     </section>
 
-    <!-- ==================== TESTIMONIALS ==================== -->
+    <!-- ==================== THE MODEL / NUMBERS ==================== -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Reviews</span>
-                <h2 class="section-title split-text">What Our Guests Say</h2>
+                <span class="section-label">The Model</span>
+                <h2 class="section-title split-text">Asset-Light. Brand-Heavy.</h2>
             </div>
             <div class="testimonials-track" id="testimonialsTrack">
                 <div class="testimonial-card tilt-card">
                     <div class="testimonial-stars">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        <span>&#10022;</span><span>&#10022;</span><span>&#10022;</span><span>&#10022;</span><span>&#10022;</span>
                     </div>
-                    <p class="testimonial-text">"An extraordinary dining experience. The Wagyu ribeye was the best steak I've ever had — perfectly charred with an impossibly tender center. The ambiance is unmatched."</p>
+                    <p class="testimonial-text">"Consumer behavior is shifting from utility to identity-driven purchasing. Urban India already pays a premium for coffee, fitness, and wellness. No water brand speaks their language — until now."</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">JW</div>
+                        <div class="testimonial-avatar">01</div>
                         <div>
-                            <strong>James Whitfield</strong>
-                            <span>Food Critic, The Daily Plate</span>
+                            <strong>The Consumer Shift</strong>
+                            <span>Identity-Driven Purchasing</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card tilt-card">
                     <div class="testimonial-stars">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        <span>&#10022;</span><span>&#10022;</span><span>&#10022;</span><span>&#10022;</span><span>&#10022;</span>
                     </div>
-                    <p class="testimonial-text">"We celebrated our anniversary here and it was magical. The truffle burrata alone is worth the visit. Chef Marcus came to our table — such a personal touch."</p>
+                    <p class="testimonial-text">"Atom Aqua operates on a brand-owner model with licensed third-party bottling. Low capex, rapid entry, flexible scaling — without manufacturing risk. Built for scale from day one."</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">SR</div>
+                        <div class="testimonial-avatar">02</div>
                         <div>
-                            <strong>Sophia Rodriguez</strong>
-                            <span>Regular Guest</span>
+                            <strong>The Business Model</strong>
+                            <span>Asset-Light, Brand-Heavy</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card tilt-card">
                     <div class="testimonial-stars">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        <span>&#10022;</span><span>&#10022;</span><span>&#10022;</span><span>&#10022;</span><span>&#10022;</span>
                     </div>
-                    <p class="testimonial-text">"From the moment you walk in, you know this is special. The open kitchen, the wood-fire aromas, the impeccable service. Ember & Oak sets the standard."</p>
+                    <p class="testimonial-text">"India's premium consumption market is expanding rapidly in metros. Water is consumed daily — the ultimate repeat-purchase lifestyle product. The category is ready to be redefined."</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">DK</div>
+                        <div class="testimonial-avatar">03</div>
                         <div>
-                            <strong>David Kim</strong>
-                            <span>Michelin Guide Contributor</span>
+                            <strong>The Market Timing</strong>
+                            <span>Category Redefinition</span>
                         </div>
                     </div>
                 </div>
@@ -420,17 +424,17 @@
         </div>
     </section>
 
-    <!-- ==================== RESERVATION ==================== -->
+    <!-- ==================== CONTACT ==================== -->
     <section class="reservation" id="reservation">
         <div class="reservation-bg">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80" alt="Restaurant interior">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80" alt="Nature atmospheric">
         </div>
         <div class="reservation-overlay"></div>
         <div class="container">
             <div class="reservation-content">
-                <span class="section-label">Reservations</span>
-                <h2 class="section-title split-text">Reserve Your Table</h2>
-                <p class="reservation-subtitle fade-up">Join us for an unforgettable evening. Book your table and let us take care of the rest.</p>
+                <span class="section-label">Get in Touch</span>
+                <h2 class="section-title split-text">Let's Build Something Exceptional</h2>
+                <p class="reservation-subtitle fade-up">Whether you're an investor, distribution partner, or someone who believes water deserves better — we'd love to hear from you.</p>
                 <form class="reservation-form" id="reservationForm">
                     <div class="form-row">
                         <div class="form-group fade-up">
@@ -444,54 +448,26 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group fade-up">
-                            <label>Date</label>
-                            <input type="date" required>
-                        </div>
-                        <div class="form-group fade-up">
-                            <label>Time</label>
+                            <label>You Are</label>
                             <select required>
-                                <option value="" disabled selected>Select Time</option>
-                                <option>6:00 PM</option>
-                                <option>6:30 PM</option>
-                                <option>7:00 PM</option>
-                                <option>7:30 PM</option>
-                                <option>8:00 PM</option>
-                                <option>8:30 PM</option>
-                                <option>9:00 PM</option>
-                                <option>9:30 PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group fade-up">
-                            <label>Guests</label>
-                            <select required>
-                                <option value="" disabled selected>Number of Guests</option>
-                                <option>1 Guest</option>
-                                <option>2 Guests</option>
-                                <option>3 Guests</option>
-                                <option>4 Guests</option>
-                                <option>5 Guests</option>
-                                <option>6+ Guests</option>
-                            </select>
-                        </div>
-                        <div class="form-group fade-up">
-                            <label>Occasion</label>
-                            <select>
-                                <option value="" selected>Select Occasion (optional)</option>
-                                <option>Birthday</option>
-                                <option>Anniversary</option>
-                                <option>Date Night</option>
-                                <option>Business Dinner</option>
+                                <option value="" disabled selected>Select Role</option>
+                                <option>Investor</option>
+                                <option>Distribution Partner</option>
+                                <option>Retail / Hospitality Partner</option>
+                                <option>Press / Media</option>
                                 <option>Other</option>
                             </select>
                         </div>
+                        <div class="form-group fade-up">
+                            <label>Location</label>
+                            <input type="text" placeholder="City, India">
+                        </div>
                     </div>
                     <div class="form-group fade-up">
-                        <label>Special Requests</label>
-                        <textarea placeholder="Dietary requirements, seating preferences, allergies..." rows="3"></textarea>
+                        <label>Message</label>
+                        <textarea placeholder="Tell us how you'd like to be involved..." rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-gold btn-block magnetic-btn fade-up">Confirm Reservation</button>
+                    <button type="submit" class="btn btn-gold btn-block magnetic-btn fade-up">Start the Conversation</button>
                 </form>
             </div>
         </div>
@@ -502,22 +478,21 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3 class="footer-logo">Ember <span>&</span> Oak</h3>
-                    <p>Where fire meets flavor. An unforgettable fine dining experience in the heart of the city.</p>
+                    <h3 class="footer-logo">Atom <span>Aqua</span></h3>
+                    <p>India's Next Lifestyle Water Brand. Minimal by design, premium by intention, Indian by origin.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Hours</h4>
-                    <p>Tuesday - Thursday: 5:30 PM - 10:00 PM</p>
-                    <p>Friday - Saturday: 5:00 PM - 11:00 PM</p>
-                    <p>Sunday: 5:00 PM - 9:00 PM</p>
-                    <p>Monday: Closed</p>
+                    <h4>Brand</h4>
+                    <p>Our Story</p>
+                    <p>Philosophy</p>
+                    <p>Product Range</p>
+                    <p>Distribution</p>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <p>42 Oakwood Avenue</p>
-                    <p>Downtown District</p>
-                    <p>+1 (555) 234-5678</p>
-                    <p>hello@emberandoak.com</p>
+                    <p>hello@atomaqua.in</p>
+                    <p>Mumbai, India</p>
+                    <p>For investors &amp; partners</p>
                 </div>
                 <div class="footer-col">
                     <h4>Follow Us</h4>
@@ -529,21 +504,22 @@
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-icon" aria-label="Facebook">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-icon" aria-label="Twitter">
+                        <a href="#" class="social-icon" aria-label="Twitter/X">
                             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46L20 4"/>
                             </svg>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Ember & Oak. All rights reserved.</p>
+                <p>&copy; 2025 Atom Aqua. All rights reserved. | Built with intention.</p>
                 <a href="#hero" class="back-to-top magnetic-btn" aria-label="Back to top">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="18 15 12 9 6 15"/>
